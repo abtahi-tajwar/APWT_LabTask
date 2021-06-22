@@ -33,9 +33,14 @@ use Illuminate\Support\Facades\Route;
 // Route::view('/admin/users/all', 'admin.dashboard.users.all')->name('view-admin-all-users');
 // Route::view('/admin/privacy-policy', 'admin.dashboard.privacy-policy')->name('view-admin-privacy-policy');
 
+// Login Route
 Route::get('/login', [UserController::class, 'viewLogin'])->name('view-login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+//Register Routes
+Route::get('/register', [UserController::class, 'viewRegister'])->name('view-register');
+Route::post('/register', [UserController::class, 'register'])->name('regsiter');
 
 Route::group(['middleware' => ['AuthUser']], function() {
     Route::get('/', function () {

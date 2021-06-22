@@ -36,7 +36,7 @@ class UserController extends Controller
             }
         }
     }
-    function logout(Request $req)
+    function logout()
     {
         session()->flush();
         return redirect()->route('login');
