@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class EcommerceStore extends Model
 {
     use HasFactory;
+    const CREATED_AT = 'date_sold';
 }

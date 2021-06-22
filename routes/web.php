@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\EcommerceStoreController;
+use App\Http\Controllers\PhysicalStoreController;
+use App\Http\Controllers\SocialMediaStoreController;
 use App\Http\Controllers\UserController;
+use App\Models\EcommerceStore;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,7 +48,11 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 
 
 Route::group(['middleware' => ['AuthUser']], function() {
-    Route::get('/', function () {
-        return view('index');
+    Route::get('system/sales', function () {
+        return view('system.channels');
     })->name('index');
+    Route::get('/system/sales/physical_store', [PhysicalStoreController::class, 'viewPhysicalStore'])->name('view-physical-store');
+    Route::get('/system/sales/social_media_store', [SocialMediaStoreController::class, 'viewSocialMediaStore'])->name('view-social-media-store');
+    Route::get('/system/sales/ecommerce_store', [EcommerceStoreController::class, 'viewEcommerceStore'])->name('view-ecommerce-store');
 });
+
