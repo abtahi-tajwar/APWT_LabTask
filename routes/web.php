@@ -36,11 +36,12 @@ use Illuminate\Support\Facades\Route;
 // Login Route
 Route::get('/login', [UserController::class, 'viewLogin'])->name('view-login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
-Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
 
 //Register Routes
 Route::get('/register', [UserController::class, 'viewRegister'])->name('view-register');
 Route::post('/register', [UserController::class, 'register'])->name('regsiter');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['AuthUser']], function() {
     Route::get('/', function () {
