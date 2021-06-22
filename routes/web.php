@@ -54,5 +54,6 @@ Route::group(['middleware' => ['AuthUser']], function() {
     Route::get('/system/sales/physical_store', [PhysicalStoreController::class, 'viewPhysicalStore'])->name('view-physical-store');
     Route::get('/system/sales/social_media_store', [SocialMediaStoreController::class, 'viewSocialMediaStore'])->name('view-social-media-store');
     Route::get('/system/sales/ecommerce_store', [EcommerceStoreController::class, 'viewEcommerceStore'])->name('view-ecommerce-store');
+    Route::get('/system/sales/physical_store/sell', [PhysicalStoreController::class, 'sellProduct'])->name('sell-physical-store-product');
 });
 
