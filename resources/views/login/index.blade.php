@@ -17,13 +17,14 @@
 
         <h1 class=" text-secondary text-center fw-bold mb-5 ">login</h1>
 
-        <form action=" " method="GET ">
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <!-- User name section -->
             <div class="mx-5 my-4 ">
-                <label for="username " class="form-label fw-bold ">User Name:</label>
+                <label for="email" class="form-label fw-bold ">Email:</label>
                 <div class="input-group">
                     <span class="input-group-text"> <i class="fas fa-user "></i></span>
-                    <input type="text" class="form-control rounded-end " id="username " placeholder="Type your Username ">
+                    <input type="text" class="form-control rounded-end " name="email" id="email" placeholder="Type your Email ">
                     <div class="valid-feedback ">
                         Looks good!
                     </div>
@@ -31,12 +32,17 @@
             </div>
             <!-- Password section -->
             <div class="mx-5 my- ">
-                <label for="password " class="form-label fw-bold ">Password:</label>
+                <label for="password" class="form-label fw-bold ">Password:</label>
                 <div class="input-group ">
                     <span class="input-group-text "> <i class="fas fa-key "></i></span>
-                    <input type="password" class="form-control rounded-end " id="password " placeholder="Type your Password ">
+                    <input type="password" class="form-control rounded-end " name="password" id="password" placeholder="Type your Password ">
                 </div>
             </div>
+            @if(session()->has('error'))   
+                <div class="alert alert-danger" role="alert">
+                    {{ session()->get('error') }}
+                </div>
+            @endif
 
             <div class="text-end mx-5 my-3 ">
                 <a class="link-danger " href="forget-pass ">Forgot Password?</a>
