@@ -15,9 +15,9 @@
 
     <div class="container rounded-3 bg-light mt-5 p-4 shadow " style="width: 500px">
 
-        <h1 class=" text-secondary text-center fw-bold mb-5 ">login</h1>
+        <h1 class=" text-secondary text-center fw-bold mb-5 ">Register</h1>
 
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('register') }}" method="POST">
             @csrf
             
             <!-- Full Name section -->
@@ -28,6 +28,11 @@
                     <input type="text" class="form-control rounded-end " name="fullname" id="fullname" placeholder="Type your fullname ">
                 </div>
             </div>
+            @error('fullname')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- Username section -->
             <div class="mx-5 my- ">
                 <label for="username" class="form-label fw-bold ">Username:</label>
@@ -36,6 +41,11 @@
                     <input type="text" class="form-control rounded-end " name="username" id="username" placeholder="Type your Username ">
                 </div>
             </div>
+            @error('username')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- Email section -->
             <div class="mx-5 my-4 ">
                 <label for="email" class="form-label fw-bold ">Email:</label>
@@ -47,6 +57,11 @@
                     </div>
                 </div>
             </div>
+            @error('email')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- Password section -->
             <div class="mx-5 my-4">
                 <label for="password" class="form-label fw-bold ">Password:</label>
@@ -55,6 +70,11 @@
                     <input type="password" class="form-control rounded-end " name="password" id="password" placeholder="Type your Password ">
                 </div>
             </div>
+            @error('password')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- Confirm Password section -->
             <div class="mx-5 my-4">
                 <label for="password_confirmation" class="form-label fw-bold ">Password:</label>
@@ -63,6 +83,11 @@
                     <input type="password" class="form-control rounded-end " name="password_confirmation" id="password_confirmation" placeholder="Type your Password Again">
                 </div>
             </div>
+            @error('password_confirmation')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- City section -->
             <div class="mx-5 my-4">
                 <label for="city" class="form-label fw-bold ">City:</label>
@@ -71,6 +96,11 @@
                     <input type="text" class="form-control rounded-end " name="city" id="city" placeholder="Type your city ">
                 </div>
             </div>
+            @error('city')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- Coutnry section -->
             <div class="mx-5 my-4">
                 <label for="country" class="form-label fw-bold ">country:</label>
@@ -79,14 +109,24 @@
                     <input type="text" class="form-control rounded-end " name="country" id="country" placeholder="Type your country ">
                 </div>
             </div>
+            @error('country')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             <!-- phone section -->
             <div class="mx-5 my-4">
                 <label for="phone" class="form-label fw-bold ">phone:</label>
                 <div class="input-group ">
                     <span class="input-group-text "> <i class="fas fa-phone"></i></span>
-                    <input type="text" class="form-control rounded-end " name="phone" id="phone" placeholder="Type your phone ">
+                    <input type="number" class="form-control rounded-end " name="phone" id="phone" placeholder="Type your phone ">
                 </div>
             </div>
+            @error('phone')
+                <div class="alert alert-danger mt-2" role="alert">
+                    {{ $message }}
+                </div>
+            @enderror
             <!-- company_name section -->
             <div class="mx-5 my-4">
                 <label for="company_name" class="form-label fw-bold ">company_name:</label>
@@ -95,6 +135,11 @@
                     <input type="text" class="form-control rounded-end " name="company_name" id="company_name" placeholder="Type your company_name ">
                 </div>
             </div>
+            @error('company_name')
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $message }}
+                    </div>
+            @enderror
             @if(session()->has('error'))   
                 <div class="alert alert-danger" role="alert">
                     {{ session()->get('error') }}
@@ -106,7 +151,7 @@
             </div>
             <!-- Login -->
             <div class="d-flex justify-content-center my-2 ">
-                <button type="submit " class="btn btn-lg btn-primary px-sm-4 ">Login</button>
+                <button type="submit " class="btn btn-lg btn-primary px-sm-4 ">Register</button>
             </div>
 
             <div class="text-start mx-5 my-3 ">

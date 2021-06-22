@@ -40,7 +40,7 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 //Register Routes
 Route::get('/register', [UserController::class, 'viewRegister'])->name('view-register');
-Route::post('/register', [UserController::class, 'register'])->name('regsiter');
+Route::post('/register', [UserController::class, 'register'])->name('register');
 
 
 Route::group(['middleware' => ['AuthUser']], function() {
