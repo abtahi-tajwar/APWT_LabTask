@@ -41,4 +41,12 @@ class UserController extends Controller
         session()->flush();
         return redirect()->route('login');
     }
+    function viewRegister()
+    {
+        return view('login.register');
+    }
+    function register(Request $req)
+    {
+        $user = new User();
+    }
 }

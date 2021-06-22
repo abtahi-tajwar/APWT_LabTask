@@ -19,11 +19,28 @@
 
         <form action="{{ route('login') }}" method="POST">
             @csrf
-            <!-- User name section -->
+            
+            <!-- Full Name section -->
+            <div class="mx-5 my- ">
+                <label for="fullname" class="form-label fw-bold ">Full Name:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-signature"></i></span>
+                    <input type="text" class="form-control rounded-end " name="fullname" id="fullname" placeholder="Type your fullname ">
+                </div>
+            </div>
+            <!-- Username section -->
+            <div class="mx-5 my- ">
+                <label for="username" class="form-label fw-bold ">Username:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-user "></i></span>
+                    <input type="text" class="form-control rounded-end " name="username" id="username" placeholder="Type your Username ">
+                </div>
+            </div>
+            <!-- Email section -->
             <div class="mx-5 my-4 ">
                 <label for="email" class="form-label fw-bold ">Email:</label>
                 <div class="input-group">
-                    <span class="input-group-text"> <i class="fas fa-user "></i></span>
+                    <span class="input-group-text"> <i class="fas fa-envelope-open-text"></i></span>
                     <input type="text" class="form-control rounded-end " name="email" id="email" placeholder="Type your Email ">
                     <div class="valid-feedback ">
                         Looks good!
@@ -31,11 +48,51 @@
                 </div>
             </div>
             <!-- Password section -->
-            <div class="mx-5 my- ">
+            <div class="mx-5 my-4">
                 <label for="password" class="form-label fw-bold ">Password:</label>
                 <div class="input-group ">
                     <span class="input-group-text "> <i class="fas fa-key "></i></span>
                     <input type="password" class="form-control rounded-end " name="password" id="password" placeholder="Type your Password ">
+                </div>
+            </div>
+            <!-- Confirm Password section -->
+            <div class="mx-5 my-4">
+                <label for="password_confirmation" class="form-label fw-bold ">Password:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-key "></i></span>
+                    <input type="password" class="form-control rounded-end " name="password_confirmation" id="password_confirmation" placeholder="Type your Password Again">
+                </div>
+            </div>
+            <!-- City section -->
+            <div class="mx-5 my-4">
+                <label for="city" class="form-label fw-bold ">City:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-city"></i></span>
+                    <input type="text" class="form-control rounded-end " name="city" id="city" placeholder="Type your city ">
+                </div>
+            </div>
+            <!-- Coutnry section -->
+            <div class="mx-5 my-4">
+                <label for="country" class="form-label fw-bold ">country:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-flag"></i></span>
+                    <input type="text" class="form-control rounded-end " name="country" id="country" placeholder="Type your country ">
+                </div>
+            </div>
+            <!-- phone section -->
+            <div class="mx-5 my-4">
+                <label for="phone" class="form-label fw-bold ">phone:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-phone"></i></span>
+                    <input type="text" class="form-control rounded-end " name="phone" id="phone" placeholder="Type your phone ">
+                </div>
+            </div>
+            <!-- company_name section -->
+            <div class="mx-5 my-4">
+                <label for="company_name" class="form-label fw-bold ">company_name:</label>
+                <div class="input-group ">
+                    <span class="input-group-text "> <i class="fas fa-building"></i></span>
+                    <input type="text" class="form-control rounded-end " name="company_name" id="company_name" placeholder="Type your company_name ">
                 </div>
             </div>
             @if(session()->has('error'))   
@@ -64,7 +121,6 @@
                 <a href="#"><img class="mx-4 my-3" src="https://img.icons8.com/color/50/000000/facebook-new.png" /></a>
 
             </div>
-
         </form>
 
 
